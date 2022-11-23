@@ -19,7 +19,7 @@ public class Main extends Application {
 			loader.setLocation(xmlURL);
 			Parent root = loader.load();
 			Scene scene = new Scene(root);
-			primaryStage.initStyle(StageStyle.UNDECORATED);
+//			primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
