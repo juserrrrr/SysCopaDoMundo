@@ -1,15 +1,10 @@
 package application.controller;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import application.model.Selecao;
-import application.model.Tecnico;
-import application.model.excecoes.EmptyMapException;
-import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
