@@ -3,8 +3,10 @@ package application.model;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import application.model.dao.JogadorDAO;
+import application.model.dao.SelecaoDAO;
 import application.model.dao.TecnicoDAO;
 import application.model.excecoes.EmptyMapException;
+import javafx.scene.control.ListView;
 
 /**
  * Classe contendo a abstração da Seleção exigido pelo programa.
@@ -15,6 +17,8 @@ import application.model.excecoes.EmptyMapException;
  */
 
 public class Selecao {
+	
+	public static SelecaoDAO selecaoDao = new SelecaoDAO();
 	public static AtomicInteger codSeq = new AtomicInteger();
 
 	private int codSel;
@@ -75,6 +79,34 @@ public class Selecao {
 
 	public void setSaldoGols(int saldoGols) {
 		this.saldoGols = saldoGols;
+	}
+
+	public int getQntdJogadores() {
+		try {
+			return this.jogadoresDao.findAll().size();
+		} catch (EmptyMapException e) {
+			return 0;
+		}
+	}
+
+	public String getNomeTecnico() {
+		return this.tecnicoDao.read().getNome();
+	}
+	
+	
+	public ListView<String> getNomeJogadores() {
+		Map<Integer, Jogador> todosJogadores;
+		try {
+			todosJogadores = this.jogadoresDao.findAll();
+		} catch (EmptyMapException e) {
+			return null;
+		}
+	    ListView<String> jogadores = new ListView<String>();
+	    jogadores.setPrefHeight(80);
+		for (Jogador jog : todosJogadores.values()) {
+			jogadores.getItems().add(jog.getCodJog() + " - " + jog.getNome());
+		}
+		return jogadores;
 	}
 
 	@Override

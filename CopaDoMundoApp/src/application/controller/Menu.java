@@ -9,7 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 
-public class menu {
+public class Menu {
 
     @FXML
     private ResourceBundle resources;
@@ -21,17 +21,24 @@ public class menu {
     private HBox bttinicio;
     
     @FXML
+    private HBox bttSelecoes;
+    
+    @FXML
     private BorderPane mainpane;
 
     @FXML
-    void pageinicio(MouseEvent event) {
+    void pageInicio(MouseEvent event) {
     	this.openPage("/application/view/HomePage.fxml");
     }
     
     @FXML
+    void pageSelecoes(MouseEvent event) {
+    	this.openPage("/application/view/SelecoesPage.fxml");
+    }
+    
+    @FXML
     void initialize() {
-        assert bttinicio != null : "fx:id=\"bttinicio\" was not injected: check your FXML file 'HomePage.fxml'.";
-
+    	this.openPage("/application/view/HomePage.fxml");
     }
 
     private void openPage(String url) {
@@ -41,6 +48,7 @@ public class menu {
     	} catch (Exception e) {
 
     	}
-    	this.mainpane.setCenter(root);;
+    	this.mainpane.setCenter(root);
+
     }
 }

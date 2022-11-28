@@ -2,6 +2,8 @@ package application.model;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+import application.model.dao.ArbitroDAO;
+
 /**
  * Classe contendo a abstração do Arbitro exigido pelo programa.
  * 
@@ -10,6 +12,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  */
 public class Arbitro {
+	
+	public static ArbitroDAO arbitroDao = new ArbitroDAO();
 	private static AtomicInteger codSeq = new AtomicInteger();
 
 	private int codArb;
