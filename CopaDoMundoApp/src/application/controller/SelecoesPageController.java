@@ -22,6 +22,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.util.Callback;
 
 public class SelecoesPageController {
@@ -71,16 +72,27 @@ public class SelecoesPageController {
         jogadoresListCol.setCellValueFactory(new PropertyValueFactory<Selecao,ListView>("nomeJogadores"));
         jogadoresListCol.setMinWidth(100);
         tecnicoCol.setCellValueFactory(new PropertyValueFactory<Selecao,String>("nomeTecnico"));
-        acoesCol.setCellFactory(new Callback<TableColumn<Selecao,String>, TableCell<Selecao,String>>() {
-            
+ 
+        acoesCol.setCellFactory(col -> new TableCell<Selecao, String>() {
+            private final HBox container;
+
+            {
+                Button viewBtn = new Button("View");
+                Button clearBtn = new Button("Clear");
+
+                container = new HBox(5, viewBtn, clearBtn);
+            }
+
             @Override
-            public TableCell<Selecao, String> call(TableColumn<Selecao, String> arg0) {
-                return null;
+            public void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty) {
+                    setGraphic(null);
+                } else {
+                    setGraphic(container);
+                }
             }
         });
-        
-        
-       
 
         
         this.listaSelecao.getColumns().addAll(idCol, nomeCol, jogadoresCol, jogadoresListCol, tecnicoCol, acoesCol);
