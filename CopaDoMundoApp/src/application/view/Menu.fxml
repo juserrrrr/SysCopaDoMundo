@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Menu">
+<BorderPane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Menu">
    <top>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="301.0" style="-fx-background-color: #2e3c47;" BorderPane.alignment="CENTER">
          <children>
@@ -47,7 +47,7 @@
                <children>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagens/casa.png" />
+                        <Image url="@imagens/Selecao.png" />
                      </image>
                   </ImageView>
                   <Label alignment="TOP_LEFT" prefWidth="100.0" text="Seleções" textFill="WHITE">
@@ -64,7 +64,7 @@
                <children>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagens/casa.png" />
+                        <Image url="@imagens/Jogador.png" />
                      </image>
                   </ImageView>
                   <Label alignment="TOP_LEFT" prefWidth="100.0" text="Jogadores" textFill="WHITE">
@@ -81,7 +81,7 @@
                <children>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagens/casa.png" />
+                        <Image url="@imagens/Arbitro.png" />
                      </image>
                   </ImageView>
                   <Label alignment="TOP_LEFT" prefWidth="100.0" text="Arbítros" textFill="WHITE">
@@ -96,9 +96,9 @@
             </HBox>
             <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="175.0" spacing="20.0">
                <children>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagens/casa.png" />
+                        <Image url="@imagens/Tecnico.png" />
                      </image>
                   </ImageView>
                   <Label alignment="TOP_LEFT" prefWidth="100.0" text="Técnicos" textFill="WHITE">
