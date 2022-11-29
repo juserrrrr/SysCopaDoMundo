@@ -10,8 +10,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableCell;
@@ -21,7 +25,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
 public class SelecoesPageController {
@@ -37,8 +44,10 @@ public class SelecoesPageController {
 
     @FXML
     void criarSelecao(MouseEvent event) {
-
+        this.openDialog("/application/view/DialogSelecao.fxml");
     }
+    
+
 
     @FXML
     void listarSelecao(ActionEvent event) {
@@ -47,16 +56,38 @@ public class SelecoesPageController {
     
     private ObservableList<Selecao> selecaoData;
     
-
+    private void openDialog(String url) {
+    	try {
+    		FXMLLoader loader = new FXMLLoader();
+    		URL xmlURL = getClass().getResource(url);
+    		loader.setLocation(xmlURL);    		
+    		Parent parent = loader.load();
+    		DialogSelecaoController controler = loader.getController();
+    		
+    		Scene scene = new Scene(parent);
+    		Stage stage = new Stage();
+    		stage.setTitle("Criando Seleção");
+    		stage.setScene(scene);
+    		stage.setResizable(false);
+    		stage.initModality(Modality.APPLICATION_MODAL);
+    		controler.setStage(stage);
+    		controler.setSelecaoData(selecaoData);
+    		stage.showAndWait();
+    		
+    	} catch (Exception e) {
+    		System.out.println(e.getMessage());
+    	}
+    }
     
     @FXML
     void initialize() {
         
         Collection<Selecao> selecoes = null;
+        this.selecaoData = FXCollections.observableArrayList();
 		try {
 			selecoes = Selecao.selecaoDao.findAll().values();
+			selecaoData.addAll(selecoes);
 		} catch (Exception ignore) {}
-		this.selecaoData = FXCollections.observableArrayList(selecoes);
     	
         TableColumn<Selecao,Integer> idCol  = new TableColumn<Selecao,Integer>("ID");
         TableColumn<Selecao,String> nomeCol  = new TableColumn<Selecao,String>("Nome");

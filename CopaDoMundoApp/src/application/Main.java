@@ -14,9 +14,9 @@ import javafx.fxml.FXMLLoader;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
-		MockarValores.MockSelecoes(Selecao.selecaoDao);
-		MockarValores.MockJogadores(Selecao.selecaoDao);
-		MockarValores.MockTecnicos(Selecao.selecaoDao);
+//		MockarValores.MockSelecoes(Selecao.selecaoDao);
+//		MockarValores.MockJogadores(Selecao.selecaoDao);
+//		MockarValores.MockTecnicos(Selecao.selecaoDao);
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			URL xmlURL = getClass().getResource("/application/view/Menu.fxml");
