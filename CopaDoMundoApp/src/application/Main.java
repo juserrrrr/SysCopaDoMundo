@@ -24,7 +24,7 @@ public class Main extends Application {
 			Parent root = loader.load();
 			Scene scene = new Scene(root,1000,600);
 //			primaryStage.initStyle(StageStyle.UNDECORATED);
-			primaryStage.getIcons().add(new Image("file:application/view/imagens/ScLogo.png"));
+			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/application/view/imagens/ScLogo.png")));
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
