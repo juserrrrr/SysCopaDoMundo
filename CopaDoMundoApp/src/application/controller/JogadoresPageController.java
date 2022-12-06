@@ -199,7 +199,7 @@ public class JogadoresPageController {
     	TableColumn<Jogador, String> nomeCol =new TableColumn<Jogador, String>("Nome");
     	TableColumn<Jogador, String> posCol =new TableColumn<Jogador, String>("Posição");
     	TableColumn<Jogador, Integer> cartoesAmarelosCol =new TableColumn<Jogador, Integer>("Cartões amarelos");
-    	TableColumn<Jogador, Integer> cartoesVermelhosCol =new TableColumn<Jogador, Integer>("Cartões amarelos");
+    	TableColumn<Jogador, Integer> cartoesVermelhosCol =new TableColumn<Jogador, Integer>("Cartões vermelhos");
     	TableColumn<Jogador, Integer> golsCol =new TableColumn<Jogador, Integer>("Qntd gols");
     	TableColumn<Jogador,String> acoesCol  = new TableColumn<Jogador,String>("Ações");
     	

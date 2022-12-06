@@ -75,7 +75,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="0.0" text="Auxiliar no preenchimento" textFill="WHITE" />
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="0.0" text="Auxilia no preenchimento" textFill="WHITE" />
          </children>
          <BorderPane.margin>
             <Insets bottom="30.0" />
