@@ -111,18 +111,6 @@ public class Selecao {
 
 	@Override
 	public String toString() {
-		String jogadores = "";
-		try {
-			Map<Integer, Jogador> todosJogadores = this.jogadoresDao.findAll();
-			for (Jogador jog : todosJogadores.values()) {
-				jogadores += "\n" + jog.getCodJog() + " - " + jog.getNome();
-			}
-		}catch(EmptyMapException e) {
-			jogadores = "O time nao possui jogadores!";
-		}
-		
-		return "ID da Selecao: " + this.codSel + "\nSelecao: " + this.nome + "\nTecnico: " + (this.tecnicoDao.read().getNome() == null ? "Nao possui" : this.tecnicoDao.read().getNome())
-				+ "\nJogadores: " + jogadores;
+	return this.nome;
 	}
-
 }

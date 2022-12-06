@@ -92,7 +92,7 @@ public class SelecoesPageController {
     		stage.setResizable(false);
     		stage.initModality(Modality.APPLICATION_MODAL);
     		
-    		controler.setMensagemAvisoLabel("Tem certeza que deseja excluir a selecão" + selec.getNome());
+    		controler.setMensagemAvisoLabel("Tem certeza que deseja excluir a selecão " + selec.getNome());
     		controler.setStage(stage);
     		stage.showAndWait();
     		
@@ -131,7 +131,6 @@ public class SelecoesPageController {
     				Selecao.selecaoDao.delete(selec.getCodSel());
     				selecaoData.remove(selec);
     				listaSelecao.refresh();
-    				System.out.println("Refreshei");
     			}
     			
     		}
@@ -164,7 +163,7 @@ public class SelecoesPageController {
     	tecnicoCol.setCellValueFactory(new PropertyValueFactory<Selecao,String>("nomeTecnico"));
     	acoesCol.setCellFactory(col -> new TableCell<Selecao, String>() {
     		private final HBox container;
-    		
+    	
     		{
     			ImageView editBtn = editarBotao();
     			ImageView deletBtn = deletarBotao();
