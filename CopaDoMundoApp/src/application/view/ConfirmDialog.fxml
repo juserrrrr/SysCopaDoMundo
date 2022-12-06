@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="184.0" prefWidth="546.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DialogConfirmacaoController">
+   <top>
+      <VBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="600.0" style="-fx-background-color: #2e3c47;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="54.0" prefWidth="336.0" text="Confirmar ação?" textFill="#eeeeee">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="mensagemAvisoLabel" textFill="#434343">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="57.0" prefWidth="600.0" spacing="40.0" style="-fx-background-color: #e4e4e4;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" onMouseClicked="#confirmarAcao" prefHeight="38.0" prefWidth="108.0" style="-fx-background-color: #98ee98; -fx-background-radius: 20px;" text="Confirmar">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label alignment="CENTER" onMouseClicked="#cancelarAcao" prefHeight="38.0" prefWidth="108.0" style="-fx-border-color: #ff6d6d; -fx-border-radius: 20px;" text="Cancelar">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

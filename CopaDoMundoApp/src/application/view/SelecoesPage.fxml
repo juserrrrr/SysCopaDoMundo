@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SelecoesPageController">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SelecoesPageController">
    <top>
       <HBox alignment="CENTER" prefHeight="94.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -44,7 +44,7 @@
       </HBox>
    </top>
    <center>
-      <TableView fx:id="listaSelecao" onSort="#listarSelecao" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="listaSelecao" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy></TableView>

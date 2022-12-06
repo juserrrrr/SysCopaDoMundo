@@ -8,6 +8,7 @@ import javax.naming.SizeLimitExceededException;
 import application.model.Selecao;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -25,14 +26,15 @@ public class DialogSelecaoController {
 
     private Stage stage;
     
-    private Selecao selecao;
-    
 	private ObservableList<Selecao> selecaoData;
-    
-	@FXML
-    void initialize() {
+	
+	private TableView<Selecao> selecaoTableView;
+	
+	private Selecao selecao;
 
-    }
+	public void setCampoNome(String nome) {
+		this.campoNome.setText(nome);
+	}
     
     public Stage getStage() {
 		return stage;
@@ -40,14 +42,6 @@ public class DialogSelecaoController {
 
 	public void setStage(Stage stage) {
 		this.stage = stage;
-	}
-
-	public Selecao getSelecao() {
-		return selecao;
-	}
-
-	public void setSelecao(Selecao selecao) {
-		this.selecao = selecao;
 	}
 	
 	public ObservableList<Selecao> getSelecaoData() {
@@ -58,29 +52,46 @@ public class DialogSelecaoController {
 		this.selecaoData = selecaoData;
 	}
 
+	public void setSelecaoTableView(TableView<Selecao> selecaoTableView) {
+		this.selecaoTableView = selecaoTableView;
+	}
+	
+	public void setSelecao(Selecao selecao) {
+		this.selecao = selecao;
+	}
+	
 	@FXML
     void cancelarCriacao(MouseEvent event) {
     	this.stage.close();
     }
 	
-	private void criarSelecao(String nome) {
-		Selecao selec = new Selecao(nome);
+	private void criarSelecao() {
+		Selecao selec = new Selecao(campoNome.getText());
 		try {
 			Selecao.selecaoDao.create(selec);
-			selecaoData.addAll(selec);
-		} catch (SizeLimitExceededException ignore) {}
+			selecaoData.add(selec);
+		} catch (SizeLimitExceededException e) {
+			//Completar codigo!
+		}
 	}
+		
+	private void editarSelecao() {
+		selecao.setNome(campoNome.getText());
+	}
+			
 	
-	private void editarSelecao(String nome) {
-		selecao.setNome(nome);
-	}
-
-    @FXML
+	@FXML
     void confirmarCriacao(MouseEvent event) {
-
-		criarSelecao(campoNome.getText());
+		if(selecao == null) {
+			criarSelecao();
+		} else {
+			editarSelecao();
+		}
+		selecaoTableView.refresh();
     	stage.close();
     }
    
-    	
+	
+
+
 }
