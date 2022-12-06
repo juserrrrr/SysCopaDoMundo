@@ -2,7 +2,6 @@ package application.controller;
 
 import java.net.URL;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.ResourceBundle;
 
@@ -79,8 +78,8 @@ public class JogadoresPageController {
     		controler.setJogadorTableView(tabelaJogadores);
     		controler.setCampoNome(jog == null ? "":jog.getNome());
     		controler.setPosicoesCombo(Jogador.getListaPosicoes());
-    		controler.setSelectedPosicaoCombo(jog.getPosicao());
-    		controler.setVisibleOffSelecaoBox();
+    		controler.setSelectedPosicaoCombo(jog == null ? "":jog.getPosicao());
+    		controler.setVisibleSelecaoBox(jog == null ? true:false);
     		try {
     			controler.setSelecoesCombo(Selecao.selecaoDao.findAll().values());				
 			} catch (Exception e) {
@@ -112,7 +111,7 @@ public class JogadoresPageController {
     		stage.setResizable(false);
     		stage.initModality(Modality.APPLICATION_MODAL);
     		
-    		controler.setMensagemAvisoLabel("Tem certeza que deseja excluir o jogador " + jog.getNome());
+    		controler.setMensagemAvisoLabel("Tem certeza que deseja excluir o jogador " + jog.getNome()+"?");
     		controler.setStage(stage);
     		stage.showAndWait();
     		

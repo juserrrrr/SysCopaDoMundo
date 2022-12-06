@@ -21,6 +21,7 @@ public class Main extends Application {
 			Scene scene = new Scene(root,1000,600);
 			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/application/view/imagens/ScLogo.png")));
 			primaryStage.setScene(scene);
+			primaryStage.setTitle("Gereciamento SysCopa");
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();

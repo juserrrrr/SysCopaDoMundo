@@ -44,9 +44,9 @@ public class DialogJogadorController {
 	
 	private Jogador jogador;
 	
-	public void setVisibleOffSelecaoBox() {
-		this.selecaoCombo.setVisible(false);
-		this.campoSelecaoLabel.setVisible(false);
+	public void setVisibleSelecaoBox(boolean bool) {
+		this.selecaoCombo.setVisible(bool);
+		this.campoSelecaoLabel.setVisible(bool);
 	}
 	
 	public void setCampoNome(String nome) {

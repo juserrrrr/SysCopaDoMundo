@@ -92,7 +92,7 @@ public class SelecoesPageController {
     		stage.setResizable(false);
     		stage.initModality(Modality.APPLICATION_MODAL);
     		
-    		controler.setMensagemAvisoLabel("Tem certeza que deseja excluir a selecão " + selec.getNome());
+    		controler.setMensagemAvisoLabel("Tem certeza que deseja excluir a selecão " + selec.getNome()+"?");
     		controler.setStage(stage);
     		stage.showAndWait();
     		
