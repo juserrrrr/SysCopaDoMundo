@@ -4,12 +4,15 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.ResourceBundle;
 
+import application.MockarValores;
 import application.model.Arbitro;
 import application.model.Selecao;
 import application.model.dao.ArbitroDAO;
 import application.model.dao.SelecaoDAO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 
 public class HomePageController {
 
@@ -27,13 +30,27 @@ public class HomePageController {
 
     @FXML
     private Label qtdSelecoes;
+    
+    @FXML
+    private VBox bttPovoamento;
 	
     @FXML
     void initialize() {
-        qtdArbitros.setText(contarArbitros());
-        qtdJogadores.setText(contarJogadores() + "/352");
-        qtdSelecoes.setText(contarSelecoes() + "/32");
+    	String qntdArbitros = contarArbitros();
+    	String qntdJogadores = contarJogadores();
+    	String qntdSelecoes = contarSelecoes();
+    	atualizarLabels(qntdArbitros, qntdJogadores, qntdSelecoes);
+        if(!qntdArbitros.equals("0") || !qntdJogadores.equals("0") || !qntdSelecoes.equals("0")) {
+        	bttPovoamento.setVisible(false);
+        }
+        
 
+    }
+    
+    private void atualizarLabels(String qntdArbitros, String qntdJogadores,String qntdSelecoes) {
+        qtdArbitros.setText(qntdArbitros);
+        qtdJogadores.setText(qntdJogadores + "/352");
+        qtdSelecoes.setText(qntdSelecoes + "/32");
     }
 	
 	private String contarSelecoes(){
@@ -68,6 +85,15 @@ public class HomePageController {
 		} catch (Exception ignore) {}
 		return Integer.toString(qntdArbitros);
     }  
+	
+	@FXML
+    void povoarSistema(MouseEvent event) {
+		MockarValores.MockSelecoes(Selecao.selecaoDao);
+		MockarValores.MockJogadores(Selecao.selecaoDao);
+		MockarValores.MockTecnicos(Selecao.selecaoDao);
+		atualizarLabels("0","352","32");
+		bttPovoamento.setVisible(false);
+    }
     
 
 }

@@ -2,7 +2,6 @@ package application;
 	
 import java.net.URL;
 
-import application.model.Selecao;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
@@ -14,9 +13,6 @@ import javafx.fxml.FXMLLoader;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
-//		MockarValores.MockSelecoes(Selecao.selecaoDao);
-//		MockarValores.MockJogadores(Selecao.selecaoDao);
-//		MockarValores.MockTecnicos(Selecao.selecaoDao);
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			URL xmlURL = getClass().getResource("/application/view/Menu.fxml");
