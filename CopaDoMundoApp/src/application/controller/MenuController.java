@@ -9,7 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 
-public class Menu {
+public class MenuController {
 
     @FXML
     private ResourceBundle resources;
