@@ -23,16 +23,16 @@ public class DialogSelecaoController {
     @FXML
     private TextField campoNome;
 
-    @FXML
-    void initialize() {
-
-    }
     private Stage stage;
     
     private Selecao selecao;
     
 	private ObservableList<Selecao> selecaoData;
     
+	@FXML
+    void initialize() {
+
+    }
     
     public Stage getStage() {
 		return stage;
@@ -48,6 +48,14 @@ public class DialogSelecaoController {
 
 	public void setSelecao(Selecao selecao) {
 		this.selecao = selecao;
+	}
+	
+	public ObservableList<Selecao> getSelecaoData() {
+		return selecaoData;
+	}
+	
+	public void setSelecaoData(ObservableList<Selecao> selecaoData) {
+		this.selecaoData = selecaoData;
 	}
 
 	@FXML
@@ -74,12 +82,5 @@ public class DialogSelecaoController {
     	stage.close();
     }
    
-    public ObservableList<Selecao> getSelecaoData() {
-    	return selecaoData;
-    }
-    
-    public void setSelecaoData(ObservableList<Selecao> selecaoData) {
-    	this.selecaoData = selecaoData;
-    }
     	
 }

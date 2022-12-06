@@ -60,7 +60,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </HBox>
-            <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="175.0" spacing="20.0">
+            <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#pageJogadores" prefHeight="50.0" prefWidth="175.0" spacing="20.0">
                <children>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -77,7 +77,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </HBox>
-            <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="175.0" spacing="20.0">
+            <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#pageArbitros" prefHeight="50.0" prefWidth="175.0" spacing="20.0">
                <children>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -94,7 +94,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </HBox>
-            <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="175.0" spacing="20.0">
+            <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#pageTecnicos" prefHeight="50.0" prefWidth="175.0" spacing="20.0">
                <children>
                   <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>

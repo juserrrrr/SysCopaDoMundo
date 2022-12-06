@@ -37,6 +37,21 @@ public class Menu {
     }
     
     @FXML
+    void pageJogadores(MouseEvent event) {
+    	this.openPage("/application/view/JogadoresPage.fxml");
+    }
+    
+    @FXML
+    void pageArbitros(MouseEvent event) {
+    	this.openPage("/application/view/ArbitrosPage.fxml");
+    }
+    
+    @FXML
+    void pageTecnicos(MouseEvent event) {
+    	this.openPage("/application/view/TecnicosPage.fxml");
+    }
+    
+    @FXML
     void initialize() {
     	this.openPage("/application/view/HomePage.fxml");
     }
