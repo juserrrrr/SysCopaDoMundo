@@ -44,7 +44,7 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="tecnicoCombo" prefHeight="39.0" prefWidth="306.0" />
+                  <ComboBox fx:id="selecaoCombo" prefHeight="39.0" prefWidth="306.0" />
                </children>
                <HBox.margin>
                   <Insets top="20.0" />
