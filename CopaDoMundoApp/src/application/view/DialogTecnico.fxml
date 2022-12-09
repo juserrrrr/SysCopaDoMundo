@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DialogJogadorController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DialogTecnicoController">
    <top>
       <VBox alignment="TOP_CENTER" prefHeight="71.0" prefWidth="600.0" style="-fx-background-color: #2e3c47;" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" prefHeight="101.0" prefWidth="224.0" text="Jogador" textFill="#eeeeee">
+            <Label alignment="CENTER" prefHeight="101.0" prefWidth="224.0" text="Técnico" textFill="#eeeeee">
                <font>
                   <Font name="System Bold" size="37.0" />
                </font>
@@ -33,18 +33,12 @@
                      </font>
                   </Label>
                   <TextField fx:id="campoNome" prefHeight="39.0" prefWidth="238.0" />
-                  <Label text="Posição">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-                  <ComboBox fx:id="posicaoCombo" prefHeight="39.0" prefWidth="306.0" />
                   <Label fx:id="campoSelecaoLabel" text="Seleção">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="tecnicoCombo" prefHeight="39.0" prefWidth="306.0" />
+                  <ComboBox fx:id="selecaoCombo" prefHeight="39.0" prefWidth="277.0" />
                </children>
                <HBox.margin>
                   <Insets top="20.0" />
