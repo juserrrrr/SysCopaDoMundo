@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.ResourceBundle;
 
-import application.model.Jogador;
 import application.model.Selecao;
 import application.model.Tecnico;
 import javafx.collections.FXCollections;
