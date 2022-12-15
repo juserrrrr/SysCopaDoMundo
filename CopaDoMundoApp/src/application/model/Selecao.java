@@ -108,7 +108,17 @@ public class Selecao {
 		}
 		return jogadores;
 	}
-
+	
+	
+	public Integer compareTo(Selecao selec) {
+		if(this.pontos > selec.getPontos()) {
+			return -1;
+		}else if(this.pontos < selec.getPontos()) {
+			return	1;
+		}
+		return 0;
+	}
+	
 	@Override
 	public String toString() {
 	return this.nome;

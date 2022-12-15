@@ -7,6 +7,7 @@ package application.controller;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -31,11 +32,21 @@ public class FaseGrupoController {
 
     @FXML // fx:id="Border"
     private BorderPane Border; // Value injected by FXMLLoader
+    
+    public List<Selecao> ordenarGrupo(List<Selecao> selecoes){
+    	selecoes.sort(new Comparator<Selecao>() {
+    		public int compare(Selecao selec1,Selecao selec2) {
+    			return selec1.compareTo(selec2);	
+    		}
+		});
+    	return selecoes;
+    }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
     	HBox hboxCenter = (HBox) Border.getCenter();  
     	List<Grupo> grupos = FaseDeGrupo.faseDeGrupo.findAll();
+    	
    
     	for(int i = 0;i<4;i++) {
     		VBox vboxGrupos = (VBox) hboxCenter.getChildren().get(i);
@@ -44,7 +55,8 @@ public class FaseGrupoController {
     			BorderPane borderGrupo = (BorderPane) vboxGrupos.getChildren().get(j);
     			VBox vboxCenter = (VBox) borderGrupo.getCenter();    
     			VBox vboxRight = (VBox) borderGrupo.getRight();
-    			List<Selecao> selecoes = grupos.get(i+j).getSelecoes();
+    			List<Selecao> selecoes = ordenarGrupo(grupos.get(i+j).getSelecoes());
+    			selecoes = ordenarGrupo(selecoes);
     			for(int l = 0; l<4 ; l++) {
     				Label labelSelecao = (Label)vboxCenter.getChildren().get(l);
     				labelSelecao.setText(selecoes.get(l).getNome());
