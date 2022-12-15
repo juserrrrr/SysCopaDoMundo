@@ -29,7 +29,7 @@ public class FaseGrupoMenuController {
 
     @FXML
     void gerenciarPartidas(MouseEvent event) {
-    	this.openPage("/application/view/FaseDeGruposPontos.fxml");
+    	this.openPage("/application/view/PartidasFaseDeGrupo.fxml");
     }
 
     @FXML

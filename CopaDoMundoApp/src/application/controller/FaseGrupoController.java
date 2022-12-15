@@ -47,10 +47,8 @@ public class FaseGrupoController {
     	HBox hboxCenter = (HBox) Border.getCenter();  
     	List<Grupo> grupos = FaseDeGrupo.faseDeGrupo.findAll();
     	
-   
     	for(int i = 0;i<4;i++) {
     		VBox vboxGrupos = (VBox) hboxCenter.getChildren().get(i);
-    		
     		for(int j =0;j<2;j++) {
     			BorderPane borderGrupo = (BorderPane) vboxGrupos.getChildren().get(j);
     			VBox vboxCenter = (VBox) borderGrupo.getCenter();    
