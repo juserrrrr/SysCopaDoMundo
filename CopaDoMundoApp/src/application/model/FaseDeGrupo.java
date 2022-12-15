@@ -18,9 +18,11 @@ import application.model.excecoes.TecnicosInsuficientesException;
  * @author Joao Victor e José Gabriel
  */
 public class FaseDeGrupo {
+	public static FaseDeGrupo faseDeGrupo = new FaseDeGrupo();
 	
 	private List<Grupo> grupos = new ArrayList<Grupo>();
 	private boolean fechada = false; //Pra vericação se a fase de grupo foi fechada ou não
+	private boolean iniciada = false; // Verificar se a fase de grupo já foi iniciada.
 	
 	/**
 	 * Função responsável por verificar se existem 32 selecoes cadastradas, se todas elas possuem 11 jogadores e 1 tecnico separa-las em 8 grupos
@@ -80,7 +82,7 @@ public class FaseDeGrupo {
 			grupos.add(grupo);
 			
 		}
-		setFechada(true);
+		setIniciada(true);
 	}
 	/**
 	 * Furnção responsável por retornar uma lista com todos os grupos da fase de grupos
@@ -108,4 +110,12 @@ public class FaseDeGrupo {
 	private void setFechada(boolean fechada) {
 		this.fechada = fechada;
 	}
+	public boolean isIniciada() {
+		return iniciada;
+	}
+	public void setIniciada(boolean iniciada) {
+		this.iniciada = iniciada;
+	}
+	
+	
 }

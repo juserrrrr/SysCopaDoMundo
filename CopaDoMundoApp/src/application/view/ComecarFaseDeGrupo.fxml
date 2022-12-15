@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.IniciarFaseGruposController">
+   <top>
+      <Label prefHeight="39.0" prefWidth="200.0" text="Fase de grupos" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="mensagemPossibildiade" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="113.0" prefWidth="178.0" text="Ainda não é possivel iniciar a fase de grupos." textFill="#4d4c4c" visible="false">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Label>
+            <Text fx:id="mensagemErro" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Error." visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Label fx:id="bttComecarFase" alignment="CENTER" onMouseClicked="#comecarFaseDeGrupos" prefHeight="52.0" prefWidth="374.0" style="-fx-background-color: #4d4c4c; -fx-background-radius: 20px;" text="Começar Fase De Grupos" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

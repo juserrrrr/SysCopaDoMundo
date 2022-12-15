@@ -7,6 +7,8 @@ package application.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 
@@ -17,23 +19,38 @@ public class FaseGrupoMenuController {
 
     @FXML // URL location of the FXML file that was given to the FXMLLoader
     private URL location;
-
-    @FXML // fx:id="Border"
-    private BorderPane Border; // Value injected by FXMLLoader
+    
+    @FXML
+    private BorderPane mainPane;
+    
+    void setMainPane(BorderPane mainPane) {
+    	this.mainPane = mainPane;
+    }
 
     @FXML
     void gerenciarPartidas(MouseEvent event) {
-
+    	this.openPage("/application/view/FaseDeGruposPontos.fxml");
     }
 
     @FXML
     void verGrupos(MouseEvent event) {
+    	this.openPage("/application/view/FaseDeGruposPontos.fxml");
+    }
+    
+    private void openPage(String url) {
+    	Parent root = null;
+    	
+    	try {
+    		root = FXMLLoader.load(getClass().getResource(url));
+    	} catch (Exception e) {
+
+    	}
+    	this.mainPane.setCenter(root);
 
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
-        assert Border != null : "fx:id=\"Border\" was not injected: check your FXML file 'FaseDeGruposPontos.fxml'.";
 
     }
 

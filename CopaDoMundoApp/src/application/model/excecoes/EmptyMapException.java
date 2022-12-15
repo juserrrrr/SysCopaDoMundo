@@ -9,6 +9,6 @@ package application.model.excecoes;
 public class EmptyMapException extends Exception{
 	
 	public EmptyMapException(String className) {
-		super("Nao existe " + className + " para executar esta acao!");
+		super("Nao existem " + className + " para executar esta acao!");
 	}		
 }
