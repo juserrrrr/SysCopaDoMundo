@@ -33,7 +33,7 @@
                         <Image url="@imagens/casa.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="TOP_LEFT" prefWidth="100.0" text="Inicio" textFill="WHITE">
+                  <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="114.0" text="Inicio" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -50,7 +50,7 @@
                         <Image url="@imagens/Selecao.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="TOP_LEFT" prefWidth="100.0" text="Seleções" textFill="WHITE">
+                  <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="114.0" text="Seleções" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -67,7 +67,7 @@
                         <Image url="@imagens/Jogador.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="TOP_LEFT" prefWidth="100.0" text="Jogadores" textFill="WHITE">
+                  <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="114.0" text="Jogadores" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -84,7 +84,7 @@
                         <Image url="@imagens/Arbitro.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="TOP_LEFT" prefWidth="100.0" text="Arbítros" textFill="WHITE">
+                  <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="114.0" text="Arbítros" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -101,7 +101,41 @@
                         <Image url="@imagens/Tecnico.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="TOP_LEFT" prefWidth="100.0" text="Técnicos" textFill="WHITE">
+                  <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="114.0" text="Técnicos" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#pageFaseGrupos" prefHeight="50.0" prefWidth="175.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagens/grupos.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="114.0" text="F. de Grupos" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#pagMataMata" prefHeight="50.0" prefWidth="175.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagens/matamata.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="114.0" text="Mata-mata" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>

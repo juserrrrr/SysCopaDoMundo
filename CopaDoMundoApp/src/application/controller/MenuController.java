@@ -22,7 +22,7 @@ public class MenuController {
     
     @FXML
     private HBox bttSelecoes;
-    
+       
     @FXML
     private BorderPane mainpane;
 
@@ -49,6 +49,16 @@ public class MenuController {
     @FXML
     void pageTecnicos(MouseEvent event) {
     	this.openPage("/application/view/TecnicosPage.fxml");
+    }
+    
+    @FXML
+    void pagMataMata(MouseEvent event) {
+    	this.openPage("/application/view/TecnicosPage.fxml");
+    }
+    
+    @FXML
+    void pageFaseGrupos(MouseEvent event) {
+    	this.openPage("/application/view/FaseDeGruposPontos.fxml");
     }
     
     @FXML
