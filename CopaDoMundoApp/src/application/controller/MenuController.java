@@ -55,7 +55,7 @@ public class MenuController {
     
     @FXML
     void pagMataMata(MouseEvent event) {
-    	this.openPage("/application/view/TecnicosPage.fxml");
+    	this.openPage("/application/view/Mata_mata.fxml");
     }
     
     @FXML
