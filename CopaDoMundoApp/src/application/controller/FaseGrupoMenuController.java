@@ -32,7 +32,6 @@ public class FaseGrupoMenuController {
     @FXML
     void gerenciarPartidas(MouseEvent event) {
     	this.openPage("/application/view/PartidasFaseDeGrupo.fxml");
-    	MataMata.getGerenciadorMataMata().criarMataMata();
     }
 
     @FXML

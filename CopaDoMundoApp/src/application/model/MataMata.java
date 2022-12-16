@@ -13,7 +13,8 @@ public class MataMata {
 	private Partida partidaFinal;
 	private Selecao selecaoCampea;
 	private boolean finalizado = false;
-	
+	private boolean iniciado = false;
+
 	public void ordenarGrupos(){
     	List<Grupo> grupos = FaseDeGrupo.faseDeGrupo.findAll();
     	for(Grupo grupo: grupos) {
@@ -23,7 +24,7 @@ public class MataMata {
         		}
     		});
     	}
-    	
+    	setIniciado(true);
     }
 
 	public List<Selecao> obterSelecoesGanhadoras() {
@@ -45,15 +46,6 @@ public class MataMata {
 			Partida partida = new Partida(selecoesGanhadoras.get(i), selecoesGanhadoras.get(i+1));
 			this.partidasOitavas.add(partida);
 		}
-	}
-	
-	public static MataMata getGerenciadorMataMata() {
-		return gerenciadorMataMata;
-	}
-
-
-	public static void setGerenciadorMataMata(MataMata gerenciadorMataMata) {
-		MataMata.gerenciadorMataMata = gerenciadorMataMata;
 	}
 
 
@@ -112,6 +104,14 @@ public class MataMata {
 
 	public void setFinalizado(boolean finalizado) {
 		this.finalizado = finalizado;
+	}
+	
+	public boolean isIniciado() {
+		return iniciado;
+	}
+
+	public void setIniciado(boolean iniciado) {
+		this.iniciado = iniciado;
 	}
 
 	

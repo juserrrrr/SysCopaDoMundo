@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.model.FaseDeGrupo;
+import application.model.MataMata;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -56,6 +57,9 @@ public class MenuController {
     @FXML
     void pagMataMata(MouseEvent event) {
     	if(FaseDeGrupo.faseDeGrupo.isFechada()) {
+    		if(!MataMata.gerenciadorMataMata.isIniciado()) {
+    			MataMata.gerenciadorMataMata.criarMataMata();
+    		}
     		this.openPage("/application/view/Mata_mata.fxml");
     	}else {
     		this.openPage("/application/view/ComeçarMataMataErro.fxml");
