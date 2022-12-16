@@ -42,15 +42,15 @@ public class FaseGrupoController {
     void initialize() {
     	HBox hboxCenter = (HBox) Border.getCenter();  
     	List<Grupo> grupos = FaseDeGrupo.faseDeGrupo.findAll();
-    	
+    	int contadorSelecao = 0;
     	for(int i = 0;i<4;i++) {
     		VBox vboxGrupos = (VBox) hboxCenter.getChildren().get(i);
     		for(int j =0;j<2;j++) {
     			BorderPane borderGrupo = (BorderPane) vboxGrupos.getChildren().get(j);
     			VBox vboxCenter = (VBox) borderGrupo.getCenter();    
     			VBox vboxRight = (VBox) borderGrupo.getRight();
-    			List<Selecao> selecoes = ordenarGrupo(grupos.get(i+j).getSelecoes());
-    			selecoes = ordenarGrupo(selecoes);
+    			List<Selecao> selecoes = ordenarGrupo(grupos.get(contadorSelecao).getSelecoes());
+    			contadorSelecao++;
     			for(int l = 0; l<4 ; l++) {
     				Label labelSelecao = (Label)vboxCenter.getChildren().get(l);
     				labelSelecao.setText(selecoes.get(l).getNome());
