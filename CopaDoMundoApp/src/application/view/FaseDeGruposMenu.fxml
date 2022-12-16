@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="Border" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.FaseGrupoMenuController">
+<BorderPane fx:id="Border" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.FaseGrupoMenuController">
    <top>
-      <Label prefWidth="190.0" text="Fase de grupos" BorderPane.alignment="CENTER">
+      <Label alignment="CENTER" prefWidth="200.0" text="Fase de grupos" BorderPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
