@@ -44,7 +44,7 @@
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label alignment="BOTTOM_CENTER" text="HH:mm" textFill="#797979">
+                                    <Label alignment="BOTTOM_CENTER" text="dd/MM/aaaa" textFill="#797979">
                                        <font>
                                           <Font size="10.0" />
                                        </font>
@@ -63,7 +63,7 @@
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label alignment="BOTTOM_CENTER" text="dd/MM/aaaa" textFill="#797979">
+                                    <Label alignment="BOTTOM_CENTER" text="HH:mm" textFill="#797979">
                                        <font>
                                           <Font size="10.0" />
                                        </font>
