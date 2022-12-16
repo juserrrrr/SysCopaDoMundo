@@ -107,7 +107,7 @@ public class FaseDeGrupo {
 	 * Função responsável por fechar a fase de grupos
 	 * @param fechada
 	 */
-	private void setFechada(boolean fechada) {
+	public void setFechada(boolean fechada) {
 		this.fechada = fechada;
 	}
 	public boolean isIniciada() {

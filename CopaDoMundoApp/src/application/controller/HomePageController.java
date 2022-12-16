@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import application.MockarValores;
 import application.model.Arbitro;
+import application.model.FaseDeGrupo;
 import application.model.Selecao;
 import application.model.dao.ArbitroDAO;
 import application.model.dao.SelecaoDAO;
@@ -88,9 +89,11 @@ public class HomePageController {
 	
 	@FXML
     void povoarSistema(MouseEvent event) {
+		
 		MockarValores.MockSelecoes(Selecao.selecaoDao);
 		MockarValores.MockJogadores(Selecao.selecaoDao);
 		MockarValores.MockTecnicos(Selecao.selecaoDao);
+		MockarValores.MockPartidas(FaseDeGrupo.faseDeGrupo, Selecao.selecaoDao);
 		atualizarLabels("0","352","32");
 		bttPovoamento.setVisible(false);
     }

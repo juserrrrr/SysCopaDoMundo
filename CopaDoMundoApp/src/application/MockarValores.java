@@ -2,12 +2,20 @@ package application;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
+import application.model.FaseDeGrupo;
+import application.model.Grupo;
 import application.model.Jogador;
+import application.model.Partida;
 import application.model.Selecao;
 import application.model.Tecnico;
 import application.model.dao.SelecaoDAO;
+import application.model.excecoes.EmptyMapException;
+import application.model.excecoes.JogadoresInsuficientesException;
+import application.model.excecoes.SelecoesInsuficientesException;
+import application.model.excecoes.TecnicosInsuficientesException;
 
 
 /**
@@ -64,5 +72,42 @@ public class MockarValores {
 		}
 		} catch (Exception e){}
 			
+	}
+	
+	public static void MockPartidas(FaseDeGrupo faseGrupo,SelecaoDAO selecDao) {
+		Random rand = new Random();
+		try {
+			faseGrupo.createFase(selecDao);
+			List<Grupo> grupos = faseGrupo.findAll();
+			for(Grupo grupo : grupos) {
+				Map<Integer, Partida> partidas = grupo.getPartidas();	
+				for(Partida partida: partidas.values()) {
+					int numAleatorio1 = rand.nextInt(5);
+					int numAleatorio2 = rand.nextInt(5);
+					partida.setGolsTime1(numAleatorio1);
+					partida.setGolsTime1(numAleatorio2);
+					partida.setLocal("Brasil");
+					partida.setData(null);
+					partida.setArbitro(null);
+					partida.setHorario(null);
+					partida.setFinalizada(true);
+					Selecao selecao1 = partida.getSelecao1();
+					Selecao selecao2 = partida.getSelecao2();
+					if(partida.getGolsTime1()>partida.getGolsTime2()) {
+						selecao1.setPontos(selecao1.getPontos()+3);
+					} else if(partida.getGolsTime1() < partida.getGolsTime2()) {
+						selecao2.setPontos(selecao2.getPontos()+3);
+					} else {
+						selecao1.setPontos(selecao1.getPontos()+1);
+						selecao2.setPontos(selecao2.getPontos()+1);
+					}
+				}
+				}
+			faseGrupo.setFechada(true);
+			
+		} catch (EmptyMapException | SelecoesInsuficientesException | JogadoresInsuficientesException
+				| TecnicosInsuficientesException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }
