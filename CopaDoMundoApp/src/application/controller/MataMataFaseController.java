@@ -139,7 +139,7 @@ public class MataMataFaseController {
     @FXML
     void initialize() {
     	MataMata mataMataGerenciador = MataMata.gerenciadorMataMata;
-    	Selecao selecaoCampea = mataMataGerenciador.getSelecaoCampea()
+    	Selecao selecaoCampea = mataMataGerenciador.getSelecaoCampea();
         alterarOitavas(oitavasTela1,mataMataGerenciador,0);
         alterarOitavas(oitavasTela2,mataMataGerenciador,4);
         alterarQuartas(quartasTela1,mataMataGerenciador,0);
