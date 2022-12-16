@@ -1,6 +1,7 @@
 package application.model;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class MataMata {
@@ -12,8 +13,21 @@ public class MataMata {
 	private Partida partidaFinal;
 	private Selecao selecaoCampea;
 	private boolean finalizado = false;
+	
+	public void ordenarGrupos(){
+    	List<Grupo> grupos = FaseDeGrupo.faseDeGrupo.findAll();
+    	for(Grupo grupo: grupos) {
+    		grupo.getSelecoes().sort(new Comparator<Selecao>() {
+        		public int compare(Selecao selec1,Selecao selec2) {
+        			return selec1.compareTo(selec2);	
+        		}
+    		});
+    	}
+    	
+    }
 
 	public List<Selecao> obterSelecoesGanhadoras() {
+		ordenarGrupos();
 		List<Grupo> grupos	= FaseDeGrupo.faseDeGrupo.findAll();
 		List<Selecao> selecoes = new ArrayList<Selecao>();
 		for(int i = 0;i<8;i+=2) {

@@ -1,11 +1,16 @@
 package application.controller;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import application.model.FaseDeGrupo;
+import application.model.Grupo;
 import application.model.MataMata;
 import application.model.Partida;
+import application.model.Selecao;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -43,6 +48,8 @@ public class MataMataFaseController {
 
     @FXML
     private HBox telaMaaMata;
+    
+    
     
     public void alterarOitavas(VBox oitavasTela,MataMata mataMataGerenciador,int contadorPartidas) {
     	for(int i = 0; i<4; i++) {
