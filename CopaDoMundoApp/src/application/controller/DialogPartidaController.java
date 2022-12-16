@@ -40,10 +40,7 @@ public class DialogPartidaController {
     private TextField campoLocal;
     
     @FXML
-    private Label labelDataError;
-
-    @FXML
-    private Label labelHoraError;
+    private Label labelError;
 
     private Stage stage;
     
@@ -99,43 +96,37 @@ public class DialogPartidaController {
     	this.stage.close();
     }
 	
-	public LocalDate validateDate(String dateStr) {
+	public LocalDate validateDate(String dateStr) throws DateTimeParseException {
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		LocalDate inputDt = null;
-		try {
-			inputDt = LocalDate.parse(dateStr,formato);
-			this.labelDataError.setText("");
-		} catch (DateTimeParseException e) {
-			this.labelDataError.setText("Data inválida ou com formato inválido!");
-		}
+		LocalDate inputDt = LocalDate.parse(dateStr,formato);
 		return inputDt;
 	}
 	
 	
-	public LocalTime validateTime(String timeStr) {
+	public LocalTime validateTime(String timeStr) throws DateTimeParseException {
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm");
-		LocalTime inputTm = null;
-		try {
-			inputTm = LocalTime.parse(timeStr,formato);
-			this.labelHoraError.setText("");
-		} catch (DateTimeParseException e) {
-			this.labelHoraError.setText("Hora inválida ou com formato inválido!");
-		}
+		LocalTime inputTm = LocalTime.parse(timeStr,formato);
 		return inputTm;
 	}
 	
-	private void editarPartida() {
+	private void editarPartida() throws DateTimeParseException{
+		LocalTime horaValidada = validateTime(campoHora.getText());
+		LocalDate dataValidada = validateDate(campoData.getText());
 		Arbitro arb = arbitroCombo.getSelectionModel().getSelectedItem();
 		partida.setLocal(campoLocal.getText());
-		partida.setHorario(validateTime(campoHora.getText()));
-		partida.setData(validateDate(campoData.getText()));
+		partida.setHorario(horaValidada);
+		partida.setData(dataValidada);
 		partida.setArbitro(arb);
 	}
 			
 	@FXML
     void confirmarCriacao(MouseEvent event) {
-		editarPartida();
-		partidaTableView.refresh();
-    	stage.close();
-    }
+		try {
+			editarPartida();
+			partidaTableView.refresh();
+	    	stage.close();
+		}catch(DateTimeParseException e) {
+			this.labelError.setText("Data ou Hora inválida ou com formato inválido!");
+		}
+	}
 }

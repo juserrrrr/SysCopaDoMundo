@@ -3,6 +3,7 @@ package application.controller;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.ResourceBundle;
@@ -65,6 +66,7 @@ public class PartidaFaseGruposPageController {
     		loader.setLocation(xmlURL);    		
     		Parent parent = loader.load();
     		DialogPartidaController controler = loader.getController();
+    		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     		
     		Scene scene = new Scene(parent);
     		Stage stage = new Stage();
@@ -80,7 +82,7 @@ public class PartidaFaseGruposPageController {
     		controler.setPartidaData(partidaData);
     		controler.setPartidaTableView(tabelaPartidas);
     		controler.setCampoLocal(partida.getLocal() == null ? "":partida.getLocal());
-    		controler.setCampoData(partida.getData() == null ? "":partida.getData().toString());
+    		controler.setCampoData(partida.getData() == null ? "":partida.getData().format(formato));
     		controler.setCampoHora(partida.getHorario() == null ? "":partida.getHorario().toString());
     		
     		try {
@@ -94,6 +96,40 @@ public class PartidaFaseGruposPageController {
     	} catch (Exception e) {
     		System.out.println(e.getMessage());
     	}
+    }
+    
+    public void abrirDialogInformacoes(Partida partida) {
+    	try {
+    		FXMLLoader loader = new FXMLLoader();
+    		URL xmlURL = getClass().getResource("/application/view/DialogInfoPartida.fxml");
+    		loader.setLocation(xmlURL);    		
+    		Parent parent = loader.load();
+    		DialogInfoPartidaController controler = loader.getController();
+    		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    		Scene scene = new Scene(parent);
+    		Stage stage = new Stage();
+    		
+    		stage.setTitle("Dados da Partida");
+    		stage.setScene(scene);
+    		stage.setResizable(false);
+    		stage.initModality(Modality.APPLICATION_MODAL);
+    		
+    		controler.setCampoLocal(partida.getLocal() == null ? "Sem local": partida.getLocal());
+    		controler.setCampoData(partida.getData() == null ? "Sem Data":partida.getData().format(formato));
+    		controler.setCampoHora(partida.getHorario() == null ? "Sem Horário":partida.getHorario().toString());
+    		controler.setCampoArbitro(partida.getArbitro() == null ? "Sem Árbitro":partida.getArbitro().getNome());
+    		controler.setStage(stage);
+    		
+    		stage.show();
+    		
+    	} catch (Exception e) {
+    		System.out.println(e.getMessage());
+    	}
+    }
+    
+    public void abrirDialogFinalizar(Partida partida) {
+    	
     }
     
     public ImageView editarBotao(){
@@ -110,6 +146,36 @@ public class PartidaFaseGruposPageController {
     	});
     	return editBtn;
     }
+    
+    public ImageView informacoesBotao() {
+    	ImageView infoBtn = new ImageView(new Image(getClass().getResourceAsStream("/application/view/imagens/Info.png")));
+    	infoBtn.setFitHeight(35);
+    	infoBtn.setPreserveRatio(true);
+		infoBtn.setCursor(Cursor.HAND);
+		infoBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent arg0) {
+				Partida partida = tabelaPartidas.getSelectionModel().getSelectedItem();
+				abrirDialogInformacoes(partida);
+			}
+    	});
+    	return infoBtn;
+    }
+    
+    public ImageView finalizarBotao() {
+    	ImageView finBtn = new ImageView(new Image(getClass().getResourceAsStream("/application/view/imagens/Check.png")));
+    	finBtn.setFitHeight(35);
+    	finBtn.setPreserveRatio(true);
+    	finBtn.setCursor(Cursor.HAND);
+    	finBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent arg0) {
+				Partida partida = tabelaPartidas.getSelectionModel().getSelectedItem();
+				abrirDialogFinalizar(partida);
+			}
+    	});
+    	return finBtn;
+    }
 
     @FXML
     void initialize() {
@@ -121,31 +187,25 @@ public class PartidaFaseGruposPageController {
     	} catch (Exception ignore) {}
     	
     	TableColumn<Partida,Integer> idCol  = new TableColumn<Partida,Integer>("ID");
-    	TableColumn<Partida,String> selecao1Col  = new TableColumn<Partida,String>("Seleção 1");
-    	TableColumn<Partida,String> selecao2Col  = new TableColumn<Partida,String>("Seleção 2");
-    	TableColumn<Partida,String> localCol  = new TableColumn<Partida,String>("Local");
-    	TableColumn<Partida,LocalDate> dataCol  = new TableColumn<Partida,LocalDate>("Data");
-    	TableColumn<Partida,LocalTime> horaCol  = new TableColumn<Partida,LocalTime>("Hora");
-    	TableColumn<Partida,String> arbCol  = new TableColumn<Partida,String>("Árbitro");
+    	TableColumn<Partida,String> selecoesCol  = new TableColumn<Partida,String>("Seleções");
+    	TableColumn<Partida,String> placarCol  = new TableColumn<Partida,String>("Placar");
     	TableColumn<Partida,String> acoesCol  = new TableColumn<Partida,String>("Ações");
     	
     	
     	idCol.setCellValueFactory(new PropertyValueFactory<Partida,Integer>("codPart"));
-    	selecao1Col.setCellValueFactory(new PropertyValueFactory<Partida,String>("selecao1"));
-    	selecao2Col.setCellValueFactory(new PropertyValueFactory<Partida,String>("selecao2"));
-    	localCol.setCellValueFactory(new PropertyValueFactory<Partida,String>("local"));
-    	dataCol.setCellValueFactory(new PropertyValueFactory<Partida,LocalDate>("data"));
-    	horaCol.setCellValueFactory(new PropertyValueFactory<Partida,LocalTime>("horario"));
-    	arbCol.setCellValueFactory(new PropertyValueFactory<Partida,String>("arbitro"));
+    	selecoesCol.setCellValueFactory(new PropertyValueFactory<Partida,String>("selecoes"));
+    	placarCol.setCellValueFactory(new PropertyValueFactory<Partida,String>("placar"));
     	acoesCol.setCellFactory(col -> new TableCell<Partida, String>() {
 		private final HBox container;
 		
 		{
+			ImageView infoBtn = informacoesBotao();
+			ImageView finBtn = finalizarBotao();
 			ImageView editBtn = editarBotao();
 			
 			container = new HBox();
-			container.setSpacing(20);
-			container.getChildren().addAll(editBtn);
+			container.setSpacing(10);
+			container.getChildren().addAll(infoBtn, finBtn, editBtn);
 			container.setAlignment(Pos.CENTER);
 			
 		}
@@ -161,7 +221,7 @@ public class PartidaFaseGruposPageController {
 		}
 	});
     	
-    	this.tabelaPartidas.getColumns().addAll(idCol,selecao1Col,selecao2Col,localCol,dataCol,horaCol,arbCol,acoesCol);
+    	this.tabelaPartidas.getColumns().addAll(idCol,selecoesCol,placarCol,acoesCol);
     	this.tabelaPartidas.setItems(partidaData);
     }
 

@@ -81,8 +81,7 @@
                      </font>
                   </Label>
                   <ComboBox fx:id="arbitroCombo" prefHeight="39.0" prefWidth="306.0" />
-                  <Label fx:id="labelHoraError" prefHeight="17.0" prefWidth="268.0" textFill="RED" />
-                  <Label fx:id="labelDataError" prefHeight="17.0" prefWidth="297.0" textFill="RED" />
+                  <Label fx:id="labelError" prefHeight="17.0" prefWidth="268.0" textFill="RED" />
                </children>
                <HBox.margin>
                   <Insets top="20.0" />
