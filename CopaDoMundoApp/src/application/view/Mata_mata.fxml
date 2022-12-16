@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.BorderPane?>
@@ -10,11 +11,11 @@
 
 <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MataMataFaseController">
    <center>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+      <HBox fx:id="telaMaaMata" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="1.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="CENTER" prefHeight="490.0" prefWidth="151.0" spacing="40.0">
+            <VBox fx:id="oitavasTela1" alignment="CENTER" prefHeight="490.0" prefWidth="151.0" spacing="40.0">
                <children>
-                  <BorderPane prefHeight="70.0" prefWidth="151.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                  <BorderPane maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
@@ -50,7 +51,7 @@
                         </VBox>
                      </right>
                   </BorderPane>
-                  <BorderPane prefHeight="70.0" prefWidth="151.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                  <BorderPane maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
@@ -86,7 +87,7 @@
                         </VBox>
                      </right>
                   </BorderPane>
-                  <BorderPane prefHeight="70.0" prefWidth="151.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                  <BorderPane maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
@@ -122,7 +123,7 @@
                         </VBox>
                      </right>
                   </BorderPane>
-                  <BorderPane prefHeight="70.0" prefWidth="151.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                  <BorderPane maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
@@ -160,9 +161,9 @@
                   </BorderPane>
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="490.0" prefWidth="151.0" spacing="40.0">
+            <VBox fx:id="quartasTela1" alignment="CENTER" prefHeight="490.0" prefWidth="151.0" spacing="40.0">
                <children>
-                  <BorderPane prefHeight="70.0" prefWidth="151.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                  <BorderPane maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
@@ -198,7 +199,7 @@
                         </VBox>
                      </right>
                   </BorderPane>
-                  <BorderPane prefHeight="70.0" prefWidth="151.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                  <BorderPane maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
@@ -235,9 +236,131 @@
                      </right>
                   </BorderPane>
                </children></VBox>
-            <VBox alignment="CENTER" prefHeight="490.0" prefWidth="151.0">
+            <VBox alignment="TOP_CENTER" prefHeight="354.0" prefWidth="285.0">
                <children>
-                  <BorderPane prefHeight="70.0" prefWidth="151.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                  <BorderPane fx:id="campeaoTela" maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                     <center>
+                        <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="Seleção" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0" />
+                              <Label text="Seleção" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </center>
+                     <right>
+                        <VBox alignment="CENTER" prefHeight="92.0" prefWidth="39.0" spacing="5.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0" />
+                              <Label text="0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </right>
+                     <VBox.margin>
+                        <Insets bottom="35.0" />
+                     </VBox.margin>
+                  </BorderPane>
+                  <HBox fx:id="semisTela" alignment="CENTER" prefHeight="100.0" prefWidth="273.0" spacing="4.0">
+                     <children>
+                        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                           <center>
+                              <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="Seleção" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" />
+                                    <Label text="Seleção" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </center>
+                           <right>
+                              <VBox alignment="CENTER" prefHeight="92.0" prefWidth="39.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="0" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" />
+                                    <Label text="0" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </right>
+                        </BorderPane>
+                        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                           <center>
+                              <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="Seleção" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" />
+                                    <Label text="Seleção" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </center>
+                           <right>
+                              <VBox alignment="CENTER" prefHeight="92.0" prefWidth="39.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="0" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" />
+                                    <Label text="0" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </right>
+                        </BorderPane>
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets top="50.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox fx:id="quartasTela2" alignment="CENTER" prefHeight="490.0" prefWidth="151.0" spacing="40.0">
+               <children>
+                  <BorderPane maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
@@ -273,46 +396,7 @@
                         </VBox>
                      </right>
                   </BorderPane>
-               </children></VBox>
-            <VBox alignment="CENTER" prefHeight="490.0" prefWidth="151.0" spacing="40.0">
-               <children>
-                  <BorderPane prefHeight="70.0" prefWidth="151.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
-                     <center>
-                        <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label text="Seleção" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="15.0" />
-                                 </font>
-                              </Label>
-                              <Separator prefWidth="200.0" />
-                              <Label text="Seleção" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="15.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </center>
-                     <right>
-                        <VBox alignment="CENTER" prefHeight="92.0" prefWidth="39.0" spacing="5.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label text="0" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="15.0" />
-                                 </font>
-                              </Label>
-                              <Separator prefWidth="200.0" />
-                              <Label text="0" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="15.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </right>
-                  </BorderPane>
-                  <BorderPane prefHeight="70.0" prefWidth="151.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                  <BorderPane maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
@@ -350,9 +434,9 @@
                   </BorderPane>
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="490.0" prefWidth="151.0" spacing="40.0">
+            <VBox fx:id="oitavasTela2" alignment="CENTER" prefHeight="490.0" prefWidth="151.0" spacing="40.0">
                <children>
-                  <BorderPane prefHeight="70.0" prefWidth="151.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                  <BorderPane maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
@@ -388,7 +472,7 @@
                         </VBox>
                      </right>
                   </BorderPane>
-                  <BorderPane prefHeight="70.0" prefWidth="151.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                  <BorderPane maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
@@ -424,7 +508,7 @@
                         </VBox>
                      </right>
                   </BorderPane>
-                  <BorderPane prefHeight="70.0" prefWidth="151.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                  <BorderPane maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
@@ -460,7 +544,7 @@
                         </VBox>
                      </right>
                   </BorderPane>
-                  <BorderPane prefHeight="70.0" prefWidth="151.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
+                  <BorderPane maxWidth="-Infinity" prefHeight="70.0" prefWidth="130.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
@@ -504,7 +588,7 @@
    <top>
       <VBox alignment="CENTER" prefHeight="90.0" prefWidth="806.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d00545;" />
+            <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d00545;" />
             <Label text="Campeão">
                <font>
                   <Font name="Eras Bold ITC" size="38.0" />
@@ -512,7 +596,7 @@
             </Label>
             <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="44.0" prefWidth="239.0" style="-fx-background-color: #d00545; -fx-background-radius: 20px;">
                <center>
-                  <Label text="Seleção" textFill="WHITE" BorderPane.alignment="CENTER">
+                  <Label fx:id="labelCampeao" text="Seleção" textFill="WHITE" BorderPane.alignment="CENTER">
                      <font>
                         <Font name="System Bold Italic" size="26.0" />
                      </font>
@@ -523,6 +607,44 @@
       </VBox>
    </top>
    <bottom>
-      <Pane prefHeight="10.0" prefWidth="806.0" style="-fx-background-color: #d00545;" BorderPane.alignment="CENTER" />
+      <VBox prefHeight="26.0" prefWidth="806.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="806.0" spacing="100.0">
+               <children>
+                  <Label text="OItavas">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Quartas">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Semis">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Semis">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Quartas">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="OItavas">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="10.0" prefWidth="806.0" style="-fx-background-color: #d00545;" />
+         </children>
+      </VBox>
    </bottom>
 </BorderPane>
