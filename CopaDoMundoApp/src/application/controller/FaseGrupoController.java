@@ -5,8 +5,6 @@
 package application.controller;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -14,9 +12,7 @@ import java.util.ResourceBundle;
 import application.model.FaseDeGrupo;
 import application.model.Grupo;
 import application.model.Selecao;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;

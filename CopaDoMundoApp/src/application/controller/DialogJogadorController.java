@@ -58,8 +58,8 @@ public class DialogJogadorController {
 		
 	}
 	
-	public void setSelecoesCombo(Collection<Selecao> jogadores) {
-		this.selecaoCombo.getItems().addAll(jogadores);
+	public void setSelecoesCombo(Collection<Selecao> selecoes) {
+		this.selecaoCombo.getItems().addAll(selecoes);
 		
 	}
 	
