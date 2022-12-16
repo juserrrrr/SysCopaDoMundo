@@ -55,7 +55,11 @@ public class MenuController {
     
     @FXML
     void pagMataMata(MouseEvent event) {
-    	this.openPage("/application/view/Mata_mata.fxml");
+    	if(FaseDeGrupo.faseDeGrupo.isFechada()) {
+    		this.openPage("/application/view/Mata_mata.fxml");
+    	}else {
+    		this.openPage("/application/view/ComeçarMataMataErro.fxml");
+    	}
     }
     
     @FXML
