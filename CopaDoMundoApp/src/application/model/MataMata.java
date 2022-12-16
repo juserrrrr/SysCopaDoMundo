@@ -6,12 +6,13 @@ import java.util.List;
 public class MataMata {
 	public static MataMata gerenciadorMataMata = new MataMata();
 	
-	private List<Partida> partidasSemis;
-	private List<Partida> partidasQuartas;
-	private List<Partida> partidasOitavas;
+	private List<Partida> partidasSemis = new ArrayList<Partida>();
+	private List<Partida> partidasQuartas = new ArrayList<Partida>();
+	private List<Partida> partidasOitavas = new ArrayList<Partida>();
 	private Partida partidaFinal;
 	private Selecao selecaoCampea;
-	
+	private boolean finalizado = false;
+
 	public List<Selecao> obterSelecoesGanhadoras() {
 		List<Grupo> grupos	= FaseDeGrupo.faseDeGrupo.findAll();
 		List<Selecao> selecoes = new ArrayList<Selecao>();
@@ -25,11 +26,11 @@ public class MataMata {
 	}
 	
 	public void criarMataMata() {
-		List<Selecao> selecoesSeparadas = obterSelecoesGanhadoras();
-		for(Selecao selecao: selecoesSeparadas) {
-			System.out.println(selecao.getNome());
+		List<Selecao> selecoesGanhadoras = obterSelecoesGanhadoras();
+		for(int i = 0; i<16; i+=2) {
+			Partida partida = new Partida(selecoesGanhadoras.get(i), selecoesGanhadoras.get(i+1));
+			this.partidasOitavas.add(partida);
 		}
-		
 	}
 	
 	public static MataMata getGerenciadorMataMata() {
@@ -91,6 +92,13 @@ public class MataMata {
 		this.selecaoCampea = selecaoCampea;
 	}
 
+	public boolean isFinalizado() {
+		return finalizado;
+	}
+
+	public void setFinalizado(boolean finalizado) {
+		this.finalizado = finalizado;
+	}
 
 	
 

@@ -6,6 +6,8 @@ package application.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import application.model.MataMata;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,6 +32,7 @@ public class FaseGrupoMenuController {
     @FXML
     void gerenciarPartidas(MouseEvent event) {
     	this.openPage("/application/view/PartidasFaseDeGrupo.fxml");
+    	MataMata.getGerenciadorMataMata().criarMataMata();
     }
 
     @FXML

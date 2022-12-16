@@ -167,13 +167,13 @@
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Label text="Seleção" textFill="WHITE">
+                              <Label text="Ganhador" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
                               <Separator prefWidth="200.0" />
-                              <Label text="Seleção" textFill="WHITE">
+                              <Label text="Ganhador" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -203,13 +203,13 @@
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Label text="Seleção" textFill="WHITE">
+                              <Label text="Ganhador" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
                               <Separator prefWidth="200.0" />
-                              <Label text="Seleção" textFill="WHITE">
+                              <Label text="Ganhador" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -247,13 +247,13 @@
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Label text="Seleção" textFill="WHITE">
+                              <Label text="Ganhador" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
                               <Separator prefWidth="200.0" />
-                              <Label text="Seleção" textFill="WHITE">
+                              <Label text="Ganhador" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -288,13 +288,13 @@
                            <center>
                               <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <Label text="Seleção" textFill="WHITE">
+                                    <Label text="Ganhador" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
                                     <Separator prefWidth="200.0" />
-                                    <Label text="Seleção" textFill="WHITE">
+                                    <Label text="Ganhador" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -324,13 +324,13 @@
                            <center>
                               <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <Label text="Seleção" textFill="WHITE">
+                                    <Label text="Ganhador" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
                                     <Separator prefWidth="200.0" />
-                                    <Label text="Seleção" textFill="WHITE">
+                                    <Label text="Ganhador" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -369,13 +369,13 @@
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Label text="Seleção" textFill="WHITE">
+                              <Label text="Ganhador" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
                               <Separator prefWidth="200.0" />
-                              <Label text="Seleção" textFill="WHITE">
+                              <Label text="Ganhador" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -405,13 +405,13 @@
                      <center>
                         <VBox alignment="CENTER" prefHeight="92.0" prefWidth="138.0" spacing="5.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Label text="Seleção" textFill="WHITE">
+                              <Label text="Ganhador" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
                               <Separator prefWidth="200.0" />
-                              <Label text="Seleção" textFill="WHITE">
+                              <Label text="Ganhador" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
