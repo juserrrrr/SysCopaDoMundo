@@ -360,7 +360,7 @@
                   </HBox>
                </children>
                <HBox.margin>
-                  <Insets top="50.0" />
+                  <Insets top="35.0" />
                </HBox.margin>
             </VBox>
             <VBox fx:id="quartasTela2" alignment="CENTER" prefHeight="490.0" prefWidth="151.0" spacing="40.0">
