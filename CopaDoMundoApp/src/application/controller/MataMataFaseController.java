@@ -15,11 +15,16 @@ import application.model.Partida;
 import application.model.Selecao;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class MataMataFaseController {
 
@@ -52,6 +57,43 @@ public class MataMataFaseController {
 
     @FXML
     private HBox telaMaaMata;
+
+	@FXML
+    private BorderPane mainPane;
+    
+    void setMainPane(BorderPane mainPane) {
+    	this.mainPane = mainPane;
+    }
+    
+    public void abrirDialogFinalizar(Partida partida) {
+    	try {
+    		FXMLLoader loader = new FXMLLoader();
+    		URL xmlURL = getClass().getResource("/application/view/DialogFinalizarPartida.fxml");
+    		loader.setLocation(xmlURL);    		
+    		Parent parent = loader.load();
+    		DialogFinalizarPartidaController controler = loader.getController();
+    		Scene scene = new Scene(parent);
+    		Stage stage = new Stage();
+    		
+    		stage.setTitle("Finalizar Partida");
+    		stage.setScene(scene);
+    		stage.setResizable(false);
+    		stage.initModality(Modality.APPLICATION_MODAL);
+    		
+    		controler.setPartida(partida);
+    		controler.setStage(stage);
+    		controler.setCampoTime1(partida.getSelecao1().getNome());
+    		controler.setCampoTime2(partida.getSelecao2().getNome());
+    		controler.setJogadoresTime1Data(partida.getSelecao1().getJogadoresDao().findAll().values());
+    		controler.setJogadoresTime2Data(partida.getSelecao2().getJogadoresDao().findAll().values());
+    		controler.carregarTabela();
+    		
+    		stage.show();
+    		
+    	} catch (Exception e) {
+    		System.out.println(e.getMessage());
+    	}
+    }
     
     
     public void alterarOitavas(VBox oitavasTela,MataMata mataMataGerenciador,int contadorPartidas) {
@@ -66,8 +108,9 @@ public class MataMataFaseController {
         	borderP.setOnMouseClicked(new EventHandler<MouseEvent>() {
         		@Override
         		public void handle(MouseEvent arg0) {
-        			System.out.println(partida.getSelecao1());
-        			
+        			if(!partida.isFinalizada()) {
+        				abrirDialogFinalizar(partida);
+        			}
         		}
         	});
         	
@@ -80,6 +123,7 @@ public class MataMataFaseController {
     		labelNome2.setText(partida.getSelecao2().getNome());
     		Label labelGol2 = (Label) vboxGols.getChildren().get(2);
     		labelGol2.setText(Integer.toString(partida.getGolsTime2()));
+    		
         }
     }
     

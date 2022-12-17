@@ -2,7 +2,6 @@ package application.controller;
 
 import java.net.URL;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.ResourceBundle;
 
 import application.model.Jogador;

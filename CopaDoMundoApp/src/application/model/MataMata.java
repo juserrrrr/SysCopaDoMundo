@@ -4,11 +4,17 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+
+
+/**
+ * Classe responsavel pelo manejamento do mata-mata, como o proprio chavemente.
+ * @author Joao Victor e José Gabriel
+ */
 public class MataMata {
 	public static MataMata gerenciadorMataMata = new MataMata();
-	
 	private List<Partida> partidasSemis = new ArrayList<Partida>();
 	private List<Partida> partidasQuartas = new ArrayList<Partida>();
+	private List<Selecao> quartasSelecoesGanhadoras = new ArrayList<Selecao>();
 	private List<Partida> partidasOitavas = new ArrayList<Partida>();
 	private Partida partidaFinal;
 	private Selecao selecaoCampea;
@@ -27,6 +33,11 @@ public class MataMata {
     	setIniciado(true);
     }
 
+	
+/**
+ * Função responsavel por obter as seleções ganhadoras da FaseDeGrupo.
+ * @author Joao Victor e José Gabriel
+ */
 	public List<Selecao> obterSelecoesGanhadoras() {
 		ordenarGrupos();
 		List<Grupo> grupos	= FaseDeGrupo.faseDeGrupo.findAll();
@@ -40,6 +51,11 @@ public class MataMata {
 		return selecoes;
 	}
 	
+	
+/**
+ * Função responsavel por criar o mata Mata.
+ * @author Joao Victor e José Gabriel
+ */
 	public void criarMataMata() {
 		List<Selecao> selecoesGanhadoras = obterSelecoesGanhadoras();
 		for(int i = 0; i<16; i+=2) {

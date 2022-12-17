@@ -1,8 +1,6 @@
 package application.controller;
 
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.HashSet;
@@ -11,9 +9,7 @@ import java.util.ResourceBundle;
 import application.model.Arbitro;
 import application.model.FaseDeGrupo;
 import application.model.Grupo;
-import application.model.Jogador;
 import application.model.Partida;
-import application.model.Selecao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;

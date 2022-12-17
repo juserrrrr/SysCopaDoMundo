@@ -63,17 +63,27 @@ public class DialogArbitroController {
     	this.stage.close();
     }
 	
+	/**
+	 * Função responável por criar um arbitro com os dados inseridos pelo usuario
+	 */
 	private void criarArbitro() {
 		Arbitro selec = new Arbitro(campoNome.getText());
 		Arbitro.arbitroDao.create(selec);
 		arbitroData.add(selec);
 	}
 		
+	/**
+	 * Função responável por editar um arbitro selecionado pelo usuario
+	 */
 	private void editarArbitro() {
 		arbitro.setNome(campoNome.getText());
 	}
 			
 	
+	/**
+	 * Função responsável pelo botão de confirmar
+	 * @param event
+	 */
 	@FXML
     void confirmarCriacao(MouseEvent event) {
 		if(arbitro == null) {

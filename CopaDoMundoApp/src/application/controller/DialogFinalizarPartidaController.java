@@ -80,6 +80,9 @@ public class DialogFinalizarPartidaController {
 		this.partida = partida;
 	}
 
+	/**
+	 * Função responsável por carregar os dados das partidas e inserir na tabela
+	 */
 	public void carregarTabela() {
 		TableColumn<Jogador,Integer> idCol  = new TableColumn<Jogador,Integer>("ID");
     	TableColumn<Jogador,String> nomeCol  = new TableColumn<Jogador,String>("Jogador");
@@ -108,6 +111,10 @@ public class DialogFinalizarPartidaController {
     	this.tabelaTime2.setItems(jogadoresTime2Data);
 	}
 
+	/**
+	 * Função responsável por inserir as ações realizadas pelos jogadores aos dados da partida (Gols/Cartoes)
+	 * @param event
+	 */
 	@FXML
 	void confirmarCriacao(MouseEvent event) {
 		Map<Integer, JogPartida> jogPartMap = partida.getJogPartidas();
@@ -133,7 +140,9 @@ public class DialogFinalizarPartidaController {
 			jogPartMap.put(jogador.getCodJog(),jogPart);
 			partida.setGolsTime2(partida.getGolsTime2() + jogador.getGolsRange().getValue());
 		}
-		this.partidaTableView.refresh();
+		if(partidaTableView != null) {
+			this.partidaTableView.refresh();
+		}
 		partida.setFinalizada(true);
 		stage.close();
 	}	

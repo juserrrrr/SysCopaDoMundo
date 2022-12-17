@@ -48,6 +48,10 @@ public class ArbitrosPageController {
     @FXML
     private TextField searchField;
     
+    /**
+     * Função responsável por fazer a pesquisa de um arbitro pelo nome
+     * @param event
+     */
     @FXML
     void filtrarTabela(ActionEvent event) {
     	if(searchField.getText().isEmpty()) {
@@ -71,6 +75,10 @@ public class ArbitrosPageController {
         this.abrirDialogArbitro(null);
     }
 
+    /**
+     * Função reponsável por abrir o dialog de criação e edição de árbitro
+     * @param arbitro
+     */
     public void abrirDialogArbitro(Arbitro arbitro) {
     	try {
     		FXMLLoader loader = new FXMLLoader();
@@ -100,6 +108,11 @@ public class ArbitrosPageController {
     	}
     }
     
+    /**
+     * Função responsável por abrir o dialog de confirmação na tentativa do usuario deletar um seleção
+     * @param arbitro
+     * @return
+     */
     public boolean abrirDialogConfirmacao(Arbitro arbitro) {
     	DialogConfirmacaoController controler = null;
     	try {
@@ -129,6 +142,10 @@ public class ArbitrosPageController {
     	return controler.getRespostaConfirmacao();
     }
 
+    /**
+     * Função responsável por gerar um botão de editar para cada seleção na tabela
+     * @return
+     */
     public ImageView editarBotao(){
     	ImageView editBtn = new ImageView(new Image(getClass().getResourceAsStream("/application/view/imagens/Editar.png")));
 		editBtn.setFitHeight(35);
@@ -144,6 +161,10 @@ public class ArbitrosPageController {
     	return editBtn;
     }
     
+    /**
+     * Função responsável por gerar um botão de deletar para cada seleção na tabela
+     * @return
+     */
     public ImageView deletarBotao(){
     	ImageView deletBtn = new ImageView(new Image(getClass().getResourceAsStream("/application/view/imagens/Lixeira.png")));
 		deletBtn.setFitHeight(35);

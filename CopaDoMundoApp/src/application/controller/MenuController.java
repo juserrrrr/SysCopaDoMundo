@@ -60,7 +60,7 @@ public class MenuController {
     		if(!MataMata.gerenciadorMataMata.isIniciado()) {
     			MataMata.gerenciadorMataMata.criarMataMata();
     		}
-    		this.openPage("/application/view/Mata_mata.fxml");
+    		this.openPageMataController("/application/view/Mata_mata.fxml");
     	}else {
     		this.openPage("/application/view/ComeçarMataMataErro.fxml");
     	}
@@ -90,6 +90,24 @@ public class MenuController {
     	this.mainpane.setCenter(root);
 
     }
+	
+	private void openPageMataController (String url) {
+    	Parent root = null;
+    	
+    	try {
+    		FXMLLoader loader = new FXMLLoader();
+    		URL xmlURL = getClass().getResource(url);
+    		loader.setLocation(xmlURL);    		
+    		root = loader.load();
+    		MataMataFaseController controler = loader.getController();
+    		controler.setMainPane(mainpane);
+    	} catch (Exception e) {
+    		
+    	}
+    	this.mainpane.setCenter(root);
+    	
+    }
+
     private void openPageFaseController (String url) {
     	Parent root = null;
     	

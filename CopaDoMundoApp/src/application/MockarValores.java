@@ -85,7 +85,7 @@ public class MockarValores {
 					int numAleatorio1 = rand.nextInt(5);
 					int numAleatorio2 = rand.nextInt(5);
 					partida.setGolsTime1(numAleatorio1);
-					partida.setGolsTime1(numAleatorio2);
+					partida.setGolsTime2(numAleatorio2);
 					partida.setLocal("Brasil");
 					partida.setData(null);
 					partida.setArbitro(null);

@@ -89,7 +89,6 @@ public class HomePageController {
 	
 	@FXML
     void povoarSistema(MouseEvent event) {
-		
 		MockarValores.MockSelecoes(Selecao.selecaoDao);
 		MockarValores.MockJogadores(Selecao.selecaoDao);
 		MockarValores.MockTecnicos(Selecao.selecaoDao);
