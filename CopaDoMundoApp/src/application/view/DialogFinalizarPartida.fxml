@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DialogFinalizarPartidaController">
+   <top>
+      <VBox alignment="TOP_CENTER" prefHeight="71.0" prefWidth="600.0" style="-fx-background-color: #2e3c47;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="71.0" prefWidth="359.0" text="Finalizar Partida" textFill="#eeeeee">
+               <font>
+                  <Font name="System Bold" size="37.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <HBox alignment="CENTER" prefHeight="350.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="400.0">
+               <children>
+                  <Label fx:id="campoTime1" alignment="CENTER" prefHeight="18.0" prefWidth="400.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tabelaTime1" prefHeight="350.0" prefWidth="350.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="400.0">
+               <children>
+                  <Label fx:id="campoTime2" alignment="CENTER" prefHeight="18.0" prefWidth="400.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tabelaTime2" prefHeight="350.0" prefWidth="350.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="58.0" prefWidth="600.0" spacing="40.0" style="-fx-background-color: #e4e4e4;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" onMouseClicked="#confirmarCriacao" prefHeight="38.0" prefWidth="108.0" style="-fx-background-color: #98ee98; -fx-background-radius: 20px;" text="Confirmar">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label alignment="CENTER" onMouseClicked="#cancelarCriacao" prefHeight="38.0" prefWidth="108.0" style="-fx-border-color: #ff6d6d; -fx-border-radius: 20px;" text="Cancelar">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
