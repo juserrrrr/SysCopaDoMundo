@@ -129,7 +129,34 @@ public class PartidaFaseGruposPageController {
     }
     
     public void abrirDialogFinalizar(Partida partida) {
-    	
+    	try {
+    		FXMLLoader loader = new FXMLLoader();
+    		URL xmlURL = getClass().getResource("/application/view/DialogFinalizarPartida.fxml");
+    		loader.setLocation(xmlURL);    		
+    		Parent parent = loader.load();
+    		DialogFinalizarPartidaController controler = loader.getController();
+    		Scene scene = new Scene(parent);
+    		Stage stage = new Stage();
+    		
+    		stage.setTitle("Finalizar Partida");
+    		stage.setScene(scene);
+    		stage.setResizable(false);
+    		stage.initModality(Modality.APPLICATION_MODAL);
+    		
+    		controler.setPartida(partida);
+    		controler.setStage(stage);
+    		controler.setPartidaTableView(tabelaPartidas);
+    		controler.setCampoTime1(partida.getSelecao1().getNome());
+    		controler.setCampoTime2(partida.getSelecao2().getNome());
+    		controler.setJogadoresTime1Data(partida.getSelecao1().getJogadoresDao().findAll().values());
+    		controler.setJogadoresTime2Data(partida.getSelecao2().getJogadoresDao().findAll().values());
+    		controler.carregarTabela();
+    		
+    		stage.show();
+    		
+    	} catch (Exception e) {
+    		System.out.println(e.getMessage());
+    	}
     }
     
     public ImageView editarBotao(){
@@ -149,7 +176,7 @@ public class PartidaFaseGruposPageController {
     
     public ImageView informacoesBotao() {
     	ImageView infoBtn = new ImageView(new Image(getClass().getResourceAsStream("/application/view/imagens/Info.png")));
-    	infoBtn.setFitHeight(35);
+    	infoBtn.setFitHeight(41);
     	infoBtn.setPreserveRatio(true);
 		infoBtn.setCursor(Cursor.HAND);
 		infoBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -164,14 +191,18 @@ public class PartidaFaseGruposPageController {
     
     public ImageView finalizarBotao() {
     	ImageView finBtn = new ImageView(new Image(getClass().getResourceAsStream("/application/view/imagens/Check.png")));
-    	finBtn.setFitHeight(35);
+    	finBtn.setFitHeight(41);
     	finBtn.setPreserveRatio(true);
     	finBtn.setCursor(Cursor.HAND);
     	finBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent arg0) {
 				Partida partida = tabelaPartidas.getSelectionModel().getSelectedItem();
-				abrirDialogFinalizar(partida);
+				if(!partida.isFinalizada()) {
+					abrirDialogFinalizar(partida);
+				}else {
+					
+				}
 			}
     	});
     	return finBtn;
