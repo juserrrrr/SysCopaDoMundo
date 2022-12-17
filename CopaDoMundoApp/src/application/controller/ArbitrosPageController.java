@@ -3,11 +3,14 @@ package application.controller;
 import java.net.URL;
 import java.util.Collection;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
 import application.model.Arbitro;
+import application.model.Jogador;
 import application.model.Selecao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -19,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -39,6 +43,28 @@ public class ArbitrosPageController {
     private TableView<Arbitro> tabelaArbitros;
     
     private ObservableList<Arbitro> arbitroData;
+    
+    private FilteredList<Arbitro> filtroTabelaArbitros;
+    @FXML
+    private TextField searchField;
+    
+    @FXML
+    void filtrarTabela(ActionEvent event) {
+    	if(searchField.getText().isEmpty()) {
+    		tabelaArbitros.setItems(arbitroData);
+    	} else {
+    		filtroTabelaArbitros = new FilteredList<Arbitro>(arbitroData);
+    		filtroTabelaArbitros.setPredicate(
+    			    new Predicate<Arbitro>(){
+    			        public boolean test(Arbitro arb){
+    			            return arb.getNome().equals(searchField.getText());
+    			        }
+    			    }
+    			);
+        	this.tabelaArbitros.setItems(filtroTabelaArbitros);
+    	}
+    	tabelaArbitros.refresh();
+    }
     
     @FXML
     void criarArbitro(MouseEvent event) {

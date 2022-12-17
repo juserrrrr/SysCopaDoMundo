@@ -4,11 +4,14 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
 import application.model.Selecao;
 import application.model.Tecnico;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -39,6 +43,28 @@ public class TecnicosPageController {
     private TableView<Tecnico> tabelaTecnicos;
     
     private ObservableList<Tecnico> tecnicosData;
+    
+    private FilteredList<Tecnico> filtroTabelaTecnicos;
+    @FXML
+    private TextField searchField;
+    
+    @FXML
+    void filtrarTabela(ActionEvent event) {
+    	if(searchField.getText().isEmpty()) {
+    		tabelaTecnicos.setItems(tecnicosData);
+    	} else {
+    		filtroTabelaTecnicos = new FilteredList<Tecnico>(tecnicosData);
+    		filtroTabelaTecnicos.setPredicate(
+    			    new Predicate<Tecnico>(){
+    			        public boolean test(Tecnico selec){
+    			            return selec.getNome().equals(searchField.getText());
+    			        }
+    			    }
+    			);
+        	this.tabelaTecnicos.setItems(filtroTabelaTecnicos);
+    	}
+    	tabelaTecnicos.refresh();
+    }
 
     @FXML
     void criarTecnico(MouseEvent event) {

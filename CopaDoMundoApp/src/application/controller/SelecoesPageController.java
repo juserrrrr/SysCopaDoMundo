@@ -3,10 +3,13 @@ package application.controller;
 import java.net.URL;
 import java.util.Collection;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
 import application.model.Selecao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +21,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -38,6 +42,28 @@ public class SelecoesPageController {
     private TableView<Selecao> listaSelecao;
     
     private ObservableList<Selecao> selecaoData;
+    
+    private FilteredList<Selecao> filtroTabelaSelecoes;
+    @FXML
+    private TextField searchField;
+    
+    @FXML
+    void filtrarTabela(ActionEvent event) {
+    	if(searchField.getText().isEmpty()) {
+    		listaSelecao.setItems(selecaoData);
+    	} else {
+    		filtroTabelaSelecoes = new FilteredList<Selecao>(selecaoData);
+    		filtroTabelaSelecoes.setPredicate(
+    			    new Predicate<Selecao>(){
+    			        public boolean test(Selecao selec){
+    			            return selec.getNome().equals(searchField.getText());
+    			        }
+    			    }
+    			);
+        	this.listaSelecao.setItems(filtroTabelaSelecoes);
+    	}
+    	listaSelecao.refresh();
+    }
 
     @FXML
     void criarSelecao(MouseEvent event) {

@@ -4,6 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -12,16 +13,17 @@
 
 <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.JogadoresPageController">
    <top>
-      <HBox alignment="CENTER" prefHeight="94.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="94.0" prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="TOP_CENTER" prefHeight="53.0" prefWidth="299.0" text="Jogadores" textFill="#4d4c4c">
+            <Label alignment="TOP_CENTER" prefHeight="54.0" prefWidth="210.0" text="Jogadores" textFill="#4d4c4c">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
                <HBox.margin>
-                  <Insets left="100.0" />
+                  <Insets />
                </HBox.margin>
             </Label>
+            <TextField fx:id="searchField" onAction="#filtrarTabela" prefHeight="34.0" prefWidth="195.0" promptText="Buscar por nome do jogador." />
             <Label alignment="CENTER" onMouseClicked="#criarSelecao" prefHeight="31.0" prefWidth="106.0" style="-fx-border-color: #4d4c4c; -fx-border-radius: 20px; -fx-background-radius: 5px;" text="NOVO" textFill="#4d4c4c">
                <graphic>
                   <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">

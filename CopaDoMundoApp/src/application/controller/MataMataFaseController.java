@@ -5,14 +5,18 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import application.model.FaseDeGrupo;
 import application.model.Grupo;
+import application.model.Jogador;
 import application.model.MataMata;
 import application.model.Partida;
 import application.model.Selecao;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -50,14 +54,22 @@ public class MataMataFaseController {
     private HBox telaMaaMata;
     
     
-    
     public void alterarOitavas(VBox oitavasTela,MataMata mataMataGerenciador,int contadorPartidas) {
     	for(int i = 0; i<4; i++) {
         	BorderPane borderP = (BorderPane) oitavasTela.getChildren().get(i);
+        	
         	VBox vboxNome = (VBox) borderP.getCenter();
         	VBox vboxGols = (VBox) borderP.getRight();
         	Partida partida = mataMataGerenciador.getPartidasOitavas().get(contadorPartidas);
         	contadorPartidas++;
+        	
+        	borderP.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        		@Override
+        		public void handle(MouseEvent arg0) {
+        			System.out.println(partida.getSelecao1());
+        			
+        		}
+        	});
         	
     		Label labelNome1 = (Label) vboxNome.getChildren().get(0);
     		labelNome1.setText(partida.getSelecao1().getNome());

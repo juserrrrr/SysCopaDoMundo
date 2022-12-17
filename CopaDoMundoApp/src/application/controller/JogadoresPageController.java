@@ -4,11 +4,14 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
 import application.model.Jogador;
 import application.model.Selecao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -38,7 +42,31 @@ public class JogadoresPageController {
     @FXML
     private TableView<Jogador> tabelaJogadores;
     
+
     private ObservableList<Jogador> jogadoresData;
+    
+    private FilteredList<Jogador> filtroTabelaJogadores;
+    @FXML
+    private TextField searchField;
+    
+    @FXML
+    void filtrarTabela(ActionEvent event) {
+    	if(searchField.getText().isEmpty()) {
+    		tabelaJogadores.setItems(jogadoresData);
+    	} else {
+    		filtroTabelaJogadores = new FilteredList<Jogador>(jogadoresData);
+    		filtroTabelaJogadores.setPredicate(
+    			    new Predicate<Jogador>(){
+    			        public boolean test(Jogador jog){
+    			            return jog.getNome().equals(searchField.getText());
+    			        }
+    			    }
+    			);
+        	this.tabelaJogadores.setItems(filtroTabelaJogadores);
+    	}
+    	tabelaJogadores.refresh();
+    }
+    
     
     private Collection<Jogador> listarTodosJogadores()	{
     	Collection<Selecao> selecoes = null;
@@ -236,6 +264,7 @@ public class JogadoresPageController {
     	
     	this.tabelaJogadores.getColumns().addAll(idCol,nomeCol,posCol,cartoesAmarelosCol,cartoesVermelhosCol,golsCol,acoesCol);
     	this.tabelaJogadores.setItems(jogadoresData);
+    	
     	
     }
 
